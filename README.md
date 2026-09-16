@@ -1,18 +1,27 @@
-# Didi Online – Free GitHub Pages Version
+# Didi Online – Website + Admin Panel
 
-यह static website GitHub Pages पर free में publish करने के लिए है।
+यह PHP + MySQL वेबसाइट shared hosting (cPanel आदि) पर चलाने के लिए बनाई गई है।
 
-## Publish
-1. GitHub account बनाएं।
-2. New repository बनाएं: `YOUR-USERNAME.github.io`
-3. इन सभी files को repository में upload करें।
-4. `index.html` को root में रखें।
-5. GitHub → Settings → Pages → Deploy from branch → `main` → `/ (root)` → Save.
-6. कुछ समय बाद `https://YOUR-USERNAME.github.io/` पर website खुलेगी।
-7. `sitemap.xml` में YOUR-USERNAME को अपने वास्तविक username से बदलें।
+## मुख्य सुविधाएँ
+- Home page
+- Services की सूची और Admin से Add/Edit/Delete
+- Products की सूची और Admin से Add/Edit/Delete
+- WhatsApp/contact section
+- Responsive mobile-friendly design
+- Admin login
+- Image upload
+- सभी content database में, इसलिए वेबसाइट को code बदले बिना update किया जा सकता है
 
-## Google
-Website live होने के बाद Google Search Console में property add करें, ownership verify करें और sitemap submit करें: `sitemap.xml`.
+## Setup
+1. Hosting में PHP 8+ और MySQL database बनाएं।
+2. इस package की सभी files `public_html` में upload करें।
+3. `config.example.php` को `config.php` नाम दें और database details भरें।
+4. Browser में `/install.php` खोलें और admin account बनाएं।
+5. Install के बाद `install.php` delete करें।
+6. Admin panel `/admin/` से services/products manage करें।
 
-## Important
-यह version static है। Services/Products बदलने के लिए `index.html` edit करना होगा। बाद में paid hosting/backend या किसी CMS से Admin Panel जोड़ा जा सकता है।
+## सुरक्षा
+- Strong admin password रखें।
+- HTTPS/SSL चालू रखें।
+- `config.php` को public download से सुरक्षित रखें (Apache hosting में PHP normally execute होता है)।
+- Uploads में केवल image files रखें।
